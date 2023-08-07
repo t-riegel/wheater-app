@@ -1,0 +1,9 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <span routerLink="/" class="app-name">
+    <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+    &nbsp;
+    Weather-App<mat-icon>wb_sunny</mat-icon></span>
+</mat-toolbar>
+<mat-progress-bar *ngIf="loading$ | async" color="accent" mode="indeterminate"></mat-progress-bar>
+
+<router-outlet></router-outlet>

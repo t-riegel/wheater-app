@@ -1,0 +1,72 @@
+@import 'variables';
+
+:host {
+  display: grid;
+  grid-template-areas: 'datetime icon temperature real-feel phrase clouds';
+  align-items: center;
+  justify-items: center;
+  padding: 0 20px;
+
+  @media (max-width: $screen-sm) {
+    grid-template-areas: 'datetime icon temperature'
+                         'real-feel phrase clouds';
+
+    .date-time-wrapper,
+    .phrase {
+      width: auto;
+    }
+  }
+}
+
+
+.date-time-wrapper {
+  grid-area: datetime;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .time {
+    margin-top: 5px;
+    font-size: 16px;
+  }
+
+  .date {
+    font-size: 32px;
+  }
+}
+
+app-weather-condition-icon {
+  grid-area: icon;
+  span {
+    position: relative;
+    right: 80px;
+    text-transform: capitalize;
+    font-weight: 400;
+  }
+}
+
+.temperature {
+  grid-area: temperature;
+  font-size: 48px;
+}
+
+.sea-level {
+  display: flex;
+  align-items: flex-end;
+}
+.phrase {
+  width: 200px;
+  grid-area: phrase;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.clouds {
+  grid-area: clouds;
+  display: flex;
+
+  .value {
+    line-height: 24px;
+    margin-left: 10px;
+  }
+}
